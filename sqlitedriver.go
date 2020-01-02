@@ -25,7 +25,7 @@ func InitSqliteDb(conf *DBConfig) (*sql.DB, error) {
 
 	//sqliteDb.SetMaxOpenConns(conf.DBPoolSize)
 	//sqliteDb.SetMaxIdleConns(conf.DBIdleSize)
-
+	sqliteDb.SetMaxOpenConns(1)
 	err = sqliteDb.Ping()
 	if err != nil {
 		return nil, err

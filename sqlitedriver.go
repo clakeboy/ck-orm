@@ -10,7 +10,7 @@ var SqliteDrivers = make(map[string]*sql.DB)
 
 func InitSqliteDb(conf *DBConfig) (*sql.DB, error) {
 	dsn := fmt.Sprintf(
-		"file:%s",
+		"file:%s?cache=shared",
 		conf.DBName,
 	)
 

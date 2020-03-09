@@ -1,4 +1,4 @@
-module ck-orm
+module github.com/clakeboy/ck-orm
 
 go 1.13
 

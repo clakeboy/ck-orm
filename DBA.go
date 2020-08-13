@@ -563,17 +563,17 @@ func (d *DBA) SetQueryInterface(i interface{}) {
 //输出表结构为GO struct
 func BuildTableStruct(tableName, dbName string, dbConf *DBConfig) {
 	types := map[string]string{
-		"int":      "int",
-		"tinyint":  "int",
-		"varchar":  "string",
-		"char":     "string",
-		"text":     "string",
-		"tinytext": "string",
-		"double":   "float64",
-		"float":    "float64",
-		"smallint": "int",
-		"longtext": "string",
-		"bigint":   "int64",
+		"int":      "sql.NullInt64",
+		"tinyint":  "sql.NullInt64",
+		"varchar":  "sql.NullString",
+		"char":     "sql.NullString",
+		"text":     "sql.NullString",
+		"tinytext": "sql.NullString",
+		"longtext": "sql.NullString",
+		"double":   "sql.NullFloat64",
+		"float":    "sql.NullFloat64",
+		"smallint": "sql.NullInt64",
+		"bigint":   "sql.NullInt64",
 	}
 
 	dba, err := NewDBA(dbConf)
